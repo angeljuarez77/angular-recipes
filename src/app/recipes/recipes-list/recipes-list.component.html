@@ -5,14 +5,15 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix">
+        <a href="#" class="list-group-item clearfix"
+            *ngFor="let recipe of recipes">
             <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ trialRecipe.name }}</h4>
-                <p class="list-group-item-text">{{ trialRecipe.description }}</p>
+                <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+                <p class="list-group-item-text">{{ recipe.description }}</p>
             </div>
             <span class="pull-right">
                 <img
-                    [src]="trialRecipe.image"
+                    [src]="recipe.image"
                     alt=""
                     class="img-responsive"
                     style="max-height: 50px">
@@ -21,3 +22,15 @@
         <app-recipe-item></app-recipe-item>
     </div>
 </div>
+
+<div class="row">
+    <button
+       *ngFor="let student of studentsNames"
+       class="col-xs-4"
+       (click)="chooseStudent(student)">
+        <!-- inside of the p tag we have access to the student variable declared in line 26 -->
+        {{ student }}
+        <h2>Angel is their instructor</h2>
+    </button>
+</div>
+<h1 *ngIf="chosenStudent">{{ chosenStudent }}</h1>
