@@ -22,15 +22,3 @@
         <app-recipe-item></app-recipe-item>
     </div>
 </div>
-
-<div class="row">
-    <button
-       *ngFor="let student of studentsNames"
-       class="col-xs-4"
-       (click)="chooseStudent(student)">
-        <!-- inside of the p tag we have access to the student variable declared in line 26 -->
-        {{ student }}
-        <h2>Angel is their instructor</h2>
-    </button>
-</div>
-<h1 *ngIf="chosenStudent">{{ chosenStudent }}</h1>
